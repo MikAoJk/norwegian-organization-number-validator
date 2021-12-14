@@ -1,5 +1,5 @@
 # norwegian-organization-number-validator
-a simple validator for validation a organization number
+a simple validator for validation a norwegian organization number
 
 ## Technologies used
 * Kotlin
