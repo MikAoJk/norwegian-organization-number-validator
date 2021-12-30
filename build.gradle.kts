@@ -4,9 +4,9 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 group = "no.taule.kartveit"
 version = "1.0.0"
 
-val junitJupiterVersion = "5.8.1"
+val junitJupiterVersion = "5.8.2"
 val kotlinVersion = "1.6.0"
-val logbackVersion = "1.2.7"
+val logbackVersion = "1.2.10"
 val logstashEncoderVersion = "7.0"
 
 plugins {
@@ -21,8 +21,7 @@ repositories {
 publishing {
     repositories {
         maven {
-            name = "OSSRH"
-            url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
             credentials {
                 username = System.getenv("MAVEN_USERNAME")
                 password = System.getenv("MAVEN_PASSWORD")
