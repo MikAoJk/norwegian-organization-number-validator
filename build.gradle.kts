@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
 group = "no.taule.kartveit"
-version = "1.0.1"
+version = "1.0.0"
 
 val junitJupiterVersion = "5.8.1"
 val kotlinVersion = "1.6.0"
@@ -21,10 +21,11 @@ repositories {
 publishing {
     repositories {
         maven {
-            url = uri("https://maven.pkg.github.com/MikAoJk/norwegian-organization-number-validator")
+            name = "OSSRH"
+            url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
             credentials {
-                username = System.getenv("GITHUB_USERNAME")
-                password = System.getenv("GITHUB_PASSWORD")
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
             }
         }
     }
