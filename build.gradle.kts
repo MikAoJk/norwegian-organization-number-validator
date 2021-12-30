@@ -1,13 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
-group = "no.taule.kartveit"
-version = "1.0.1"
+group = "io.github.MikAoJk"
+version = "1.0.0"
 
-val junitJupiterVersion = "5.8.1"
+val junitJupiterVersion = "5.8.2"
 val kotlinVersion = "1.6.0"
-val logbackVersion = "1.2.7"
-val logstashEncoderVersion = "7.0"
+val logbackVersion = "1.2.10"
+val logstashEncoderVersion = "7.0.1"
 
 plugins {
     kotlin("jvm") version "1.6.0"
@@ -21,10 +21,10 @@ repositories {
 publishing {
     repositories {
         maven {
-            url = uri("https://maven.pkg.github.com/MikAoJk/norwegian-organization-number-validator")
+            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
             credentials {
-                username = System.getenv("GITHUB_USERNAME")
-                password = System.getenv("GITHUB_PASSWORD")
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
             }
         }
     }
