@@ -7,7 +7,7 @@ version = "1.0.0"
 val junitJupiterVersion = "5.8.2"
 val kotlinVersion = "1.6.0"
 val logbackVersion = "1.2.10"
-val logstashEncoderVersion = "7.0"
+val logstashEncoderVersion = "7.0.1"
 
 plugins {
     kotlin("jvm") version "1.6.0"
