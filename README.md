@@ -10,4 +10,7 @@ a simple validator for validation a norwegian organization number
 To build locally and run the integration tests you can simply run `./gradlew clean build` or on windows
 `gradlew.bat clean build`
 
+#### manual publish
+To publish you can simply run `./gradlew clean build` and then run `./gradlew publish`
+
 #### Publish of artifact is done by Github Actions to maven central

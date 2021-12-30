@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
-group = "no.taule.kartveit"
+group = "io.github.MikAoJk"
 version = "1.0.0"
 
 val junitJupiterVersion = "5.8.2"
@@ -21,7 +21,7 @@ repositories {
 publishing {
     repositories {
         maven {
-            url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
             credentials {
                 username = System.getenv("MAVEN_USERNAME")
                 password = System.getenv("MAVEN_PASSWORD")
