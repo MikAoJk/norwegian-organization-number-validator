@@ -50,6 +50,13 @@ publishing {
                         url.set("https://opensource.org/licenses/MIT")
                     }
                 }
+                developers {
+                    developer {
+                        id.set("MikAoJk")
+                        name.set("Joakim Taule Kartveit")
+                        email.set("joakimkartveit@gmail.com")
+                    }
+                }
 
                 scm {
                     connection.set("scm:git:https://github.com/MikAoJk/norwegian-organization-number-validator.git")
