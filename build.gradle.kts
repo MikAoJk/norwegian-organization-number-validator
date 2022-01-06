@@ -12,11 +12,25 @@ val logstashEncoderVersion = "7.0.1"
 plugins {
     kotlin("jvm") version "1.6.0"
     `maven-publish`
+    java
+    signing
 }
 
 repositories {
     mavenCentral()
 }
+
+// TODO need to swap out env :
+// signingKey = GPG_PRIVATE_KEY
+// signingKey = GPG_PRIVATE_KEY_PASSPHRASE
+/*
+signing {
+    val signingKey: String? by project
+    val signingPassword: String? by project
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign(publishing.publications["mavenJava"])
+}
+ */
 
 publishing {
     repositories {
@@ -79,11 +93,12 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
 
-
 tasks {
     withType<KotlinCompile> {
         kotlinOptions.jvmTarget = "11"
     }
+
+    // TODO add in javadoc task here
 
     withType<Test> {
         useJUnitPlatform()
