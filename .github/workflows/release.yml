@@ -2,7 +2,7 @@ name: Build and publish artifact
 on:
   push:
     branches:
-      - mavencentral
+      - main
 jobs:
   build_and_release:
     runs-on: ubuntu-latest
