@@ -2,29 +2,46 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
 group = "io.github.MikAoJk"
-version = "1.0.0"
+version = "1.0.1"
 
 val junitJupiterVersion = "5.8.2"
-val kotlinVersion = "1.6.0"
+val kotlinVersion = "1.6.10"
 val logbackVersion = "1.2.10"
 val logstashEncoderVersion = "7.0.1"
+val javaVersion = "11"
 
 plugins {
-    kotlin("jvm") version "1.6.0"
+    kotlin("jvm") version "1.6.10"
     `maven-publish`
+    java
+    signing
 }
 
 repositories {
     mavenCentral()
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     repositories {
         maven {
+            name = "OSSRH"
             url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
             credentials {
                 username = System.getenv("MAVEN_USERNAME")
                 password = System.getenv("MAVEN_PASSWORD")
+            }
+        }
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/MikAoJk/norwegian-organization-number-validator")
+            credentials {
+                username = System.getenv("GITHUB_USERNAME")
+                password = System.getenv("GITHUB_PASSWORD")
             }
         }
     }
@@ -41,6 +58,13 @@ publishing {
                         url.set("https://opensource.org/licenses/MIT")
                     }
                 }
+                developers {
+                    developer {
+                        id.set("MikAoJk")
+                        name.set("Joakim Taule Kartveit")
+                        email.set("joakimkartveit@gmail.com")
+                    }
+                }
 
                 scm {
                     connection.set("scm:git:https://github.com/MikAoJk/norwegian-organization-number-validator.git")
@@ -53,6 +77,13 @@ publishing {
     }
 }
 
+signing {
+    val signingKey: String? by project
+    val signingPassword: String? by project
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign(publishing.publications["mavenJava"])
+}
+
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
@@ -63,10 +94,13 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
 
-
 tasks {
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "11"
+        kotlinOptions.jvmTarget = javaVersion
+    }
+
+    withType<Javadoc> {
+        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
     }
 
     withType<Test> {
