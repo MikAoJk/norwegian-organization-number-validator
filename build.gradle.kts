@@ -2,12 +2,13 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
 group = "io.github.MikAoJk"
-version = "1.0.2"
+version = "1.0.0"
 
 val junitJupiterVersion = "5.8.2"
 val kotlinVersion = "1.6.0"
 val logbackVersion = "1.2.10"
 val logstashEncoderVersion = "7.0.1"
+val javaVersion = "11"
 
 plugins {
     kotlin("jvm") version "1.6.0"
@@ -20,17 +21,10 @@ repositories {
     mavenCentral()
 }
 
-// TODO need to swap out env :
-// signingKey = GPG_PRIVATE_KEY
-// signingKey = GPG_PRIVATE_KEY_PASSPHRASE
-/*
-signing {
-    val signingKey: String? by project
-    val signingPassword: String? by project
-    useInMemoryPgpKeys(signingKey, signingPassword)
-    sign(publishing.publications["mavenJava"])
+java {
+    withJavadocJar()
+    withSourcesJar()
 }
- */
 
 publishing {
     repositories {
@@ -83,6 +77,13 @@ publishing {
     }
 }
 
+signing {
+    val signingKey: String? by project
+    val signingPassword: String? by project
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign(publishing.publications["mavenJava"])
+}
+
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
@@ -95,10 +96,12 @@ dependencies {
 
 tasks {
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "11"
+        kotlinOptions.jvmTarget = javaVersion
     }
 
-    // TODO add in javadoc task here
+    withType<Javadoc> {
+        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
+    }
 
     withType<Test> {
         useJUnitPlatform()
