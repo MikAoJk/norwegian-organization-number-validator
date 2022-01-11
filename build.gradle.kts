@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
 group = "io.github.MikAoJk"
-version = "1.0.1"
+version = "1.0.2"
 
 val junitJupiterVersion = "5.8.2"
 val kotlinVersion = "1.6.10"
@@ -49,8 +49,8 @@ publishing {
         create<MavenPublication>("mavenJava") {
 
             pom {
-                name.set("norwegian-social-security-number-validator")
-                description.set("Library for validation a norwegian organization number validator")
+                name.set("")
+                description.set("Library for validation a norwegian organization number")
                 url.set("https://github.com/MikAoJk/norwegian-organization-number-validator")
                 licenses {
                     license {
