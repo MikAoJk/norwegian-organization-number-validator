@@ -23,7 +23,7 @@ internal class ValidateNorwegianOrganizationNumberTest {
 
     }
 
-    fun validNorwegianOrganizationNumbers(): List<String> {
+    private fun validNorwegianOrganizationNumbers(): List<String> {
         return listOf(
             "123456785",
             "135795313",
@@ -40,7 +40,7 @@ internal class ValidateNorwegianOrganizationNumberTest {
         )
     }
 
-    fun invalidNorwegianOrganizationNumbers(): List<String> {
+    private fun invalidNorwegianOrganizationNumbers(): List<String> {
         return listOf(
             "889640780",
             "135795310",
