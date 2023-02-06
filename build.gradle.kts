@@ -96,8 +96,13 @@ tasks {
     withType<KotlinCompile> {
         kotlinOptions.jvmTarget = javaVersion
     }
-    named('test') {
-        useJUnitPlatform()
+    withType<Test> {
+        useJUnitPlatform {}
+        testLogging {
+            events("skipped", "failed")
+            showStackTraces = true
+            exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+        }
     }
 
     withType<Javadoc> {
