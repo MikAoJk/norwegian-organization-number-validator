@@ -96,15 +96,11 @@ tasks {
     withType<KotlinCompile> {
         kotlinOptions.jvmTarget = javaVersion
     }
+    named('test') {
+        useJUnitPlatform()
+    }
 
     withType<Javadoc> {
         (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
-    }
-
-    withType<Test> {
-        useJUnitPlatform()
-        testLogging {
-            showStackTraces = true
-           }
     }
 }
