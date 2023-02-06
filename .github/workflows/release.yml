@@ -22,7 +22,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-wrapper-
       - name: test and build
-        run: ./gradlew -Pversion="1.$(echo $GITHUB_SHA | cut -c1-7)" build
+        run: ./gradlew -Pversion="1.$(echo $GITHUB_SHA | cut -c1-7)" build --stacktrace
       - name: upload artifact
         run: ./gradlew -Pversion="1.$(echo $GITHUB_SHA | cut -c1-7)" publish
         env:
