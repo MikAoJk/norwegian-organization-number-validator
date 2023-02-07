@@ -96,6 +96,11 @@ tasks {
     withType<KotlinCompile> {
         kotlinOptions.jvmTarget = javaVersion
     }
+
+    named<KotlinCompile>("compileTestKotlin") {
+        kotlinOptions.jvmTarget = javaVersion
+    }
+
     withType<Test> {
         useJUnitPlatform {}
         testLogging {
