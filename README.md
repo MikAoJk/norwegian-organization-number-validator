@@ -17,7 +17,34 @@ for more info on how validation of a norwegian organization number is done
 * JDK 17
 
 
-## Getting started
+## Using the library
+### import
+Gradle(kotlin)
+```
+implementation("io.github.MikAoJk:norwegian-organization-number-validator:1.0.7")
+```
+
+### Use example
+```
+import io.github.mikaojk.validator.validNorwegianOrganizationNumber
+
+val validOrganizationNumber = validNorwegianOrganizationNumber("810009152")
+if (validOrganizationNumber) {
+            println("Orgnumber is valid")
+        } else {
+            println("Orgnumber is invalid")
+        }
+```
+
+## Local development started
+
+### Prerequisites
+Make sure you have the Java JDK 17 installed
+You can check which version you have installed using this command:
+``` bash
+java -version
+ ```
+
 
 ### Prerequisites
 Make sure you have the Java JDK 17 installed
