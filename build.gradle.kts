@@ -73,6 +73,7 @@ publishing {
                     developerConnection.set("scm:git:https://github.com/MikAoJk/norwegian-organization-number-validator.git")
                     url.set("https://github.com/MikAoJk/norwegian-organization-number-validator")
                 }
+                version = System.getenv("NEW_VERSION")
             }
             from(components["java"])
         }
