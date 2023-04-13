@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 
 group = "io.github.MikAoJk"
-version = "1.0.7"
+version = "1.0.0" //This will never change. See GitHub releases for releases of artifact
 
 val junitJupiterVersion = "5.9.2"
 val kotlinVersion = "1.8.20"
@@ -10,6 +10,7 @@ val javaVersion = "17"
 
 plugins {
     kotlin("jvm") version "1.8.20"
+    id("com.github.ben-manes.versions") version "0.46.0"
     `maven-publish`
     java
     signing
