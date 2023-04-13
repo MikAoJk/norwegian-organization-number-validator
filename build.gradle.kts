@@ -93,6 +93,12 @@ dependencies {
 }
 
 tasks {
+    create("printVersion") {
+        doLast {
+            println(project.version)
+        }
+    }
+
     withType<KotlinCompile> {
         kotlinOptions.jvmTarget = javaVersion
     }

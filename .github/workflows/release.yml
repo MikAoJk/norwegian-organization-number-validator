@@ -29,9 +29,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-wrapper-
       - name: build artifact
-        run: ./gradlew -Pversion="${{ env.NEW_VERSION }}" build
+        run: ./gradlew -Pversion=${{ env.NEW_VERSION }} build
       - name: upload artifact
-        run: ./gradlew -Pversion="${{ env.NEW_VERSION }}" publish
+        run: ./gradlew -Pversion=${{ env.NEW_VERSION }} publish
         env:
           GITHUB_USERNAME: x-access-token
           GITHUB_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
