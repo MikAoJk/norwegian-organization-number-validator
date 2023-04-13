@@ -5,11 +5,11 @@ group = "io.github.MikAoJk"
 version = "1.0.7"
 
 val junitJupiterVersion = "5.9.2"
-val kotlinVersion = "1.8.10"
+val kotlinVersion = "1.8.20"
 val javaVersion = "17"
 
 plugins {
-    kotlin("jvm") version "1.8.10"
+    kotlin("jvm") version "1.8.20"
     `maven-publish`
     java
     signing
@@ -88,8 +88,7 @@ signing {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
 }
 
 tasks {

@@ -84,9 +84,19 @@ and then run
 Artifact publish is done by GitHub Actions, 
 and publish to Maven Central and GitHub Packages
 
-## Contact
+## 👥 Contact
 
 This project is maintained by [CODEOWNERS](CODEOWNERS)
 
 Questions and/or feature requests?
 Please create an [issue](https://github.com/MikAoJk/norwegian-organization-number-validator/issues)
+
+## ✏️ Contributing
+
+To get started, please fork the repo and checkout a new branch. You can then build the library with the Gradle wrapper
+
+```shell script
+./gradlew shadowJar
+```
+
+See more info in [CONTRIBUTING.md](CONTRIBUTING.md)
