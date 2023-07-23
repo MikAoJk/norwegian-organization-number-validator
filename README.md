@@ -93,10 +93,5 @@ Please create an [issue](https://github.com/MikAoJk/norwegian-organization-numbe
 
 ## ✏️ Contributing
 
-To get started, please fork the repo and checkout a new branch. You can then build the library with the Gradle wrapper
-
-```shell script
-./gradlew shadowJar
-```
-
+To get started, please fork the repo and checkout a new branch.
 See more info in [CONTRIBUTING.md](CONTRIBUTING.md)
