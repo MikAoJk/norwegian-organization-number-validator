@@ -45,14 +45,6 @@ You can check which version you have installed using this command:
 java -version
  ```
 
-
-### Prerequisites
-Make sure you have the Java JDK 17 installed
-You can check which version you have installed using this command:
-``` bash
-java -version
- ```
-
 ### Running the application locally
 
 #### Build and run tests
