@@ -1,12 +1,9 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-
 group = "io.github.MikAoJk"
 version = "1.0.0" //This will never change. See GitHub releases for releases of artifact
 
 val junitJupiterVersion = "5.10.0"
 val kotlinVersion = "1.9.20"
-val javaVersion = "17"
+val javaVersion = JavaVersion.VERSION_21
 
 plugins {
     kotlin("jvm") version "1.9.20"
@@ -94,30 +91,26 @@ dependencies {
 }
 
 tasks {
-    create("printVersion") {
-        doLast {
-            println(project.version)
-        }
+
+    compileKotlin {
+        kotlinOptions.jvmTarget = javaVersion.toString()
+    }
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = javaVersion.toString()
     }
 
-    withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = javaVersion
+    javadoc  {
+        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
     }
 
-    named<KotlinCompile>("compileTestKotlin") {
-        kotlinOptions.jvmTarget = javaVersion
-    }
-
-    withType<Test> {
-        useJUnitPlatform {}
+    test {
+        useJUnitPlatform()
         testLogging {
             events("skipped", "failed")
             showStackTraces = true
+            showExceptions = true
+            showCauses = true
             exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
         }
-    }
-
-    withType<Javadoc> {
-        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
     }
 }
