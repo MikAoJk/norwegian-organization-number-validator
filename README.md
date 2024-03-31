@@ -76,6 +76,11 @@ and then run
 Artifact publish is done by GitHub Actions, 
 and publish to Maven Central and GitHub Packages
 
+This project uses [semantic versioning](https://semver.org/) and does NOT prefix tags or release titles with `v` i.e. use `1.2.3` instead of `v1.2.3` 
+
+see guide about how to relese:[creating release github](
+https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)
+
 ## 👥 Contact
 
 This project is maintained by [CODEOWNERS](CODEOWNERS)
