@@ -21,7 +21,7 @@ for more info on how validation of a norwegian organization number is done
 ### import
 Gradle(kotlin)
 ```
-implementation("io.github.MikAoJk:norwegian-organization-number-validator:1.0.7")
+implementation("io.github.MikAoJk:norwegian-organization-number-validator:2.0.1")
 ```
 
 ### Use example
