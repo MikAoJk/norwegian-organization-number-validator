@@ -6,7 +6,7 @@ val kotlinVersion = "2.0.0"
 val javaVersion = JavaVersion.VERSION_21
 
 plugins {
-    kotlin("jvm") version "2.0.0"
+    kotlin("jvm") version "2.0.10"
     id("com.github.ben-manes.versions") version "0.51.0"
     `maven-publish`
     java
