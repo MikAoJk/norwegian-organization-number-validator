@@ -1,15 +1,18 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 group = "io.github.mikaojk"
 version = "1.0.0"
 
 val junitJupiterVersion = "5.10.3"
 val kotlinVersion = "2.0.10"
+val ktfmtVersion = "0.44"
 val javaVersion = JavaVersion.VERSION_21
 
 plugins {
     kotlin("jvm") version "2.0.10"
     id("com.github.ben-manes.versions") version "0.51.0"
+    id("com.diffplug.spotless") version "6.25.0"
     `maven-publish`
-    java
     signing
 }
 
@@ -17,24 +20,16 @@ repositories {
     mavenCentral()
 }
 
-java {
-    sourceCompatibility = JavaVersion.toVersion(javaVersion)
-    targetCompatibility = JavaVersion.toVersion(javaVersion)
-
-    withJavadocJar()
-    withSourcesJar()
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+    }
 }
+
+
 
 publishing {
     repositories {
-        maven {
-            name = "OSSRH"
-            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            credentials {
-                username = System.getenv("MAVEN_USERNAME")
-                password = System.getenv("MAVEN_PASSWORD")
-            }
-        }
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/MikAoJk/norwegian-organization-number-validator")
@@ -92,14 +87,14 @@ dependencies {
 
 tasks {
 
-    compileKotlin {
-        kotlinOptions.jvmTarget = javaVersion.toString()
-    }
-    compileTestKotlin {
-        kotlinOptions.jvmTarget = javaVersion.toString()
+    spotless {
+        kotlin { ktfmt(ktfmtVersion).kotlinlangStyle() }
+        check {
+            dependsOn("spotlessApply")
+        }
     }
 
-    javadoc  {
+    javadoc {
         (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
     }
 

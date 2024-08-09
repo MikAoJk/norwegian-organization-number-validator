@@ -8,7 +8,6 @@ for more info on how validation of a norwegian organization number is done
 [![Build and test](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/build-and-test.yml)
 [![Validate Gradle Wrapper](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/gradle-wrapper-validation.yml/badge.svg)](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/gradle-wrapper-validation.yml)
 [![Build and publish artifact](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/release.yml/badge.svg)](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/release.yml)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.MikAoJk/norwegian-organization-number-validator/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.MikAoJk/norwegian-organization-number-validator/)
 
 
 ## Technologies used
@@ -21,7 +20,16 @@ for more info on how validation of a norwegian organization number is done
 ### import
 Gradle(kotlin)
 ```
-implementation("io.github.MikAoJk:norwegian-organization-number-validator:2.0.1")
+implementation("io.github.mikaojk:norwegian-organization-number-validator:2.0.4")
+```
+
+Maven
+```
+<dependency>
+  <groupId>io.github.mikaojk</groupId>
+  <artifactId>norwegian-organization-number-validator/artifactId>
+  <version>2.0.4</version>
+</dependency>
 ```
 
 ### Use example
@@ -78,7 +86,7 @@ and publish to Maven Central and GitHub Packages
 
 This project uses [semantic versioning](https://semver.org/) and does NOT prefix tags or release titles with `v` i.e. use `1.2.3` instead of `v1.2.3` 
 
-see guide about how to relese:[creating release github](
+see guide about how to relese:[creating release GitHub](
 https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release)
 
 ## 👥 Contact
