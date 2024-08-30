@@ -11,7 +11,6 @@ internal class ValidateNorwegianOrganizationNumberTest {
         validNorwegianOrganizationNumbers().forEach {
             assertEquals(true, validNorwegianOrganizationNumber(it))
         }
-
     }
 
     @Test
@@ -20,7 +19,6 @@ internal class ValidateNorwegianOrganizationNumberTest {
         invalidNorwegianOrganizationNumbers().forEach {
             assertEquals(false, validNorwegianOrganizationNumber(it))
         }
-
     }
 
     private fun validNorwegianOrganizationNumbers(): List<String> {

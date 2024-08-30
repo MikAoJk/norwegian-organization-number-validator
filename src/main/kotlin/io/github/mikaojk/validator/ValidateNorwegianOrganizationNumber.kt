@@ -8,7 +8,6 @@ fun validNorwegianOrganizationNumber(norwegianOrganizationNumber: String?): Bool
     }
 
     return validatenorwegianOrganizationNumberMod11(norwegianOrganizationNumber)
-
 }
 
 fun validatenorwegianOrganizationNumberMod11(norwegianOrganizationNumber: String): Boolean {
@@ -24,7 +23,5 @@ fun validatenorwegianOrganizationNumberMod11(norwegianOrganizationNumber: String
 
     val checksumFinal = if (checksum == 0) 0 else 11 - checksum
 
-    return checksumFinal != 10 &&
-            norwegianOrganizationNumber[8] - '0' == checksumFinal
+    return checksumFinal != 10 && norwegianOrganizationNumber[8] - '0' == checksumFinal
 }
-
