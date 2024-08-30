@@ -42,6 +42,7 @@ jreleaser {
     signing {
         active.set(Active.ALWAYS)
         armored = true
+        verify = false
     }
     deploy {
         maven {
@@ -52,6 +53,7 @@ jreleaser {
                     stagingRepository("build/staging-deploy")
                     username = System.getenv("JRELEASER_MAVENCENTRAL_USERNAME")
                     password = System.getenv("JRELEASER_MAVENCENTRAL_PASSWORD")
+                    retryDelay.set(30)
                 }
             }
         }
