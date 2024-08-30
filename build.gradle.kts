@@ -42,7 +42,6 @@ jreleaser {
     signing {
         active.set(Active.ALWAYS)
         armored = true
-        verify = false
     }
     deploy {
         maven {
@@ -81,6 +80,7 @@ publishing {
                 name.set("norwegian-organization-number-validator")
                 description.set("Library for validation a norwegian organization number")
                 url.set("https://github.com/MikAoJk/norwegian-organization-number-validator")
+                inceptionYear.set("2024")
                 licenses {
                     license {
                         name.set("MIT License")
