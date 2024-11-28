@@ -70,16 +70,6 @@ Find the newest version of gradle here: https://gradle.org/releases/ Then run th
 ./gradlew wrapper --gradle-version $gradleVersjon
 ```
 
-#### Manual publish
-To publish you can simply run 
-``` bash
-./gradlew clean build
-```
-and then run
-``` bash
-./gradlew publish
-```
-
 #### Publish of artifact
 Artifact publish is done by GitHub Actions, 
 and publish to Maven Central and GitHub Packages
