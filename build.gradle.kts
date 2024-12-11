@@ -36,7 +36,7 @@ mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, automaticRelease = true)
     signAllPublications()
 
-    coordinates(group.toString(), "norwegian-social-security-number-validator", version.toString())
+    coordinates(group.toString(), "norwegian-organization-number-validator", version.toString())
     pom {
         name.set("norwegian-organization-number-validator")
         description.set("Library for validation a norwegian organization number")
