@@ -9,6 +9,8 @@ for more info on how validation of a norwegian organization number is done
 [![Validate Gradle Wrapper](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/gradle-wrapper-validation.yml/badge.svg)](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/gradle-wrapper-validation.yml)
 [![Build and publish artifact](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/release.yml/badge.svg)](https://github.com/MikAoJk/norwegian-organization-number-validator/actions/workflows/release.yml)
 
+![GitHub Release](https://img.shields.io/github/v/release/MikAoJk/norwegian-organization-number-validator)
+
 
 ## Technologies used
 * Kotlin
