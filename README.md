@@ -46,7 +46,7 @@ if (validOrganizationNumber) {
         }
 ```
 
-## Local development started
+## Local development
 
 ### Prerequisites
 Make sure you have the Java JDK 21 installed
