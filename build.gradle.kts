@@ -1,4 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 group = "io.github.mikaojk"
@@ -34,7 +33,7 @@ dependencies {
 }
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, automaticRelease = true)
+    publishToMavenCentral(automaticRelease = true)
     signAllPublications()
 
     coordinates(group.toString(), "norwegian-organization-number-validator", version.toString())
