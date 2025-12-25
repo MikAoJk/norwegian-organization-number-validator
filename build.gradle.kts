@@ -1,3 +1,5 @@
+import com.diffplug.gradle.spotless.SpotlessTask
+import org.gradle.api.tasks.javadoc.Javadoc
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 group = "io.github.mikaojk"
