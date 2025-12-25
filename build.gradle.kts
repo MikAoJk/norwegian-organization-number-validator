@@ -67,18 +67,28 @@ mavenPublishing {
 
 tasks {
 
-    spotless {
-        kotlin { ktfmt(ktfmtVersion).kotlinlangStyle() }
-        check {
-            dependsOn("spotlessApply")
-        }
+   withType<Exec> {
+        println("⚈ ⚈ ⚈ Running Add Pre Commit Git Hook Script on Build ⚈ ⚈ ⚈")
+        commandLine("cp", "./.scripts/pre-commit", "./.git/hooks")
+        println("✅ Added Pre Commit Git Hook Script.")
+
     }
 
-    javadoc {
+    withType<SpotlessTask> {
+        spotless{
+            kotlin { ktfmt(ktfmtVersion).kotlinlangStyle() }
+            check {
+                dependsOn("spotlessApply")
+            }
+        }
+    }
+    
+
+    withType<Javadoc> {
         (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
     }
 
-    test {
+    withType<Test> {
         useJUnitPlatform()
         testLogging {
             events("skipped", "failed")
