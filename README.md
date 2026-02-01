@@ -15,7 +15,7 @@ for more info on how validation of a norwegian organization number is done
 ## Technologies used
 * Kotlin
 * Gradle
-* JDK 21
+* JDK 25
 
 
 ## Using the library
@@ -49,7 +49,7 @@ if (validOrganizationNumber) {
 ## Local development
 
 ### Prerequisites
-Make sure you have the Java JDK 21 installed
+Make sure you have the Java JDK 25 installed
 You can check which version you have installed using this command:
 ``` bash
 java -version
