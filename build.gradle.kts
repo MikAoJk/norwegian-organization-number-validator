@@ -6,11 +6,10 @@ group = "io.github.mikaojk"
 version = System.getenv("NEW_VERSION") ?: "1.0.0"
 
 val junitJupiterVersion = "6.1.0"
-val kotlinVersion = "2.3.21"
 val ktfmtVersion = "0.44"
 
 plugins {
-    kotlin("jvm") version "2.3.20"
+    kotlin("jvm") version "2.4.0"
     id("com.github.ben-manes.versions") version "0.54.0"
     id("com.diffplug.spotless") version "8.6.0"
     id("com.vanniktech.maven.publish") version "0.36.0"
@@ -28,8 +27,6 @@ kotlin {
 
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
-
     testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
