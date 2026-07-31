@@ -1,7 +1,7 @@
 # norwegian-organization-number-validator
 A simple validator for, validation a norwegian organization number
 
-See [brreg organisasjonsnummer](https://www.brreg.no/om-oss/oppgavene-vare/alle-registrene-vare/om-enhetsregisteret/organisasjonsnummeret/)
+See [brreg organisasjonsnummer](https://www.brreg.no/om-oss/registrene-vare/om-enhetsregisteret/organisasjonsnummeret/)
 for more info on how validation of a norwegian organization number is done
 
 
